@@ -1,16 +1,18 @@
 package assignments.init;
 
-class Init {
-
+public class Init {
+	static {
+		System.out.println("static Init class ");
+	}
     Init(int x) {
 
         System.out.println("1-arg const");
     }
 
-    Init() {
+    public Init() {
 
         System.out.println("no-arg const");
-    }
+    } 
 
     static {
         System.out.println("1st static init");

@@ -21,5 +21,10 @@ public class Foo {
 		f.changeIt(f.myBar);
 		System.out
 				.println("f.myBar.barNum after changeIt is " + f.myBar.barNum);
+		Character c = 'é';
+		c.toString();
+		Short s = new Short((short) 3);
+		
+		
 	}
 }

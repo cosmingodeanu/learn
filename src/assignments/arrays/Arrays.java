@@ -7,5 +7,8 @@ public class Arrays {
 		String g2 = null;
 		System.out.println("g=" + g + ", g2=" + g2);
 //		int a[][][] = new int[][][2]; 
+		int [][] q2 [][] = new int[1][][][];
+		int[][] a = new int[][]{{}};
+		int[][] a2 = new int[][]{};
 	}
 }
