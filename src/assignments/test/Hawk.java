@@ -1,4 +1,4 @@
-package objorient.constr;
+package assignments.test;
 
 class Bird {
 	{
