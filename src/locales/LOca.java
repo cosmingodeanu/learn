@@ -39,6 +39,21 @@ public class LOca {
 		DateFormat dfJA = DateFormat.getDateInstance(DateFormat.FULL, locJA);
 		System.out.println("Japan=" + dfJA.format(d2));
 
+		System.out.println("_________________");
+		Calendar c2 = Calendar.getInstance();
+		c.set(2010, 11, 14);
+		Date d3 = c2.getTime();
+		Locale locBR = new Locale("pt", "BR");
+		Locale locDK = new Locale("da", "DK");
+		Locale locITq = new Locale("it", "IT");
+		// Brazil
+		// Denmark
+		// Italy
+		System.out.println("def " + locBR.getDisplayCountry());
+		System.out.println("loc " + locBR.getDisplayCountry(locBR));
+		System.out.println("def " + locDK.getDisplayLanguage());
+		System.out.println("loc " + locDK.getDisplayLanguage(locDK));
+		System.out.println("D>I " + locDK.getDisplayLanguage(locITq));
 	}
 
 }
