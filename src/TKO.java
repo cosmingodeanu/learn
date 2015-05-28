@@ -3,6 +3,7 @@ class TKO {
 		String s = "-";
 		Integer x = 343;
 		long L343 = 343L;
+		System.out.println("x.equals(L343)=" + x.equals(L343));
 		if (x.equals(L343))
 			s += ".e1 ";
 		if (x.equals(343))
