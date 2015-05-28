@@ -1,5 +1,0 @@
-true
-true
-existing sub-dir data
-line 2 of text
-line 3 of text
