@@ -1,5 +1,7 @@
 package vm;
 
+import java.util.Locale;
+
 class Pingpong {
 	synchronized void hit(long n) {
 		for (int i = 1; i < 3; i++)
@@ -15,7 +17,7 @@ public class PinPong {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Locale loc = Locale.getDefault();
 	}
 	
 

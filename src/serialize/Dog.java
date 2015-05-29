@@ -1,5 +1,7 @@
 package serialize;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
@@ -9,6 +11,7 @@ class Dog implements Serializable {
 	private int dogSize;
 
 	public Dog(Collar collar, int size) {
+		System.out.println("dog constructor ran once");
 		theCollar = collar;
 		setDogSize(size);
 	}
@@ -28,8 +31,8 @@ class Dog implements Serializable {
 	private void writeObject(ObjectOutputStream os) {
 		// throws IOException {
 		try {
-			os.defaultWriteObject();
 			os.writeInt(theCollar.getCollarSize());
+			os.defaultWriteObject();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -43,5 +46,30 @@ class Dog implements Serializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static void main(String[] args) {
+		Collar c = new Collar(3);
+		Dog d = new Dog(c, 5);
+		System.out.println("before: collar size is "
+				+ d.getCollar().getCollarSize());
+		try {
+			FileOutputStream fs = new FileOutputStream("testSer.ser");
+			ObjectOutputStream os = new ObjectOutputStream(fs);
+			os.writeObject(d);
+			os.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			FileInputStream fis = new FileInputStream("testSer.ser");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			d = (Dog) ois.readObject();
+			ois.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("after: collar size is "
+				+ d.getCollar().getCollarSize());
 	}
 }
