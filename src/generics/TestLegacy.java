@@ -3,6 +3,8 @@ package generics;
 import java.util.*;
 
 class Parent {
+	public void stuff() {
+	}
 }
 
 class Child extends Parent {
@@ -23,6 +25,11 @@ public class TestLegacy {
 		}
 
 		// List<Parent> myList2 = new ArrayList<Child>(); // DOESN'T COMPILE
+		List<Parent> myList2 = new ArrayList<Parent>();
+		in.smthWithSuper(myList2);
+		
+		List<Child> myList3 = new ArrayList<Child>();
+		in.cannotAddSmth(myList3);
 	}
 }
 
@@ -36,4 +43,15 @@ class Inserter {
 		// put a String in the list
 		// passed in
 	}
+
+	void cannotAddSmth(List<? extends Parent> theList) {
+		// theList.addAll(new Parent());//compiler error
+		// theList.addAll(new Child());//compiler error
+		theList.get(0).stuff();
+	}
+	void smthWithSuper(List<? super Child> theList) {
+		// theList.addAll(new Parent());//compiler error
+		// theList.addAll(new Child());//compiler error
+	}
+	//compiler error
 }
