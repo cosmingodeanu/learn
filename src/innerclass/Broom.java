@@ -11,7 +11,6 @@ class BigOuter {
 	}
 
 	private void go() {
-		// TODO Auto-generated method stub
 
 	}
 }
