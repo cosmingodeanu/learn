@@ -9,15 +9,19 @@ public class Leader implements Runnable {
 		t.start();
 
 		System.out.print("m1 ");
-
+//		try {
+//			t.wait();
+//		} catch (InterruptedException e1) {
+//			e1.printStackTrace();
+//		}
 		try {
 			t.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
+			e.notify();
 		}
 
 		System.out.print("m2 ");
-
 	}
 
 	public void run() {

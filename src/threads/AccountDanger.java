@@ -23,6 +23,8 @@ public class AccountDanger implements Runnable {
 		two.setName("Lucy");
 		one.start();
 		two.start();
+		Thread t = new Thread();
+		t.start();
 	}
 
 	public void run() {
