@@ -10,7 +10,8 @@ public class InsideMethod {
 				System.out.println("Outer x is " + x);
 				// System.out.println("Local variable z is " + z); // Won't compile!
 			} // close inner class method
-		}	// close inner class definition
+		}	// close inner class definition WITHOUT SEMICOLON
+		 System.out.println();
 	}	// close outer class method doStuff()
 	/**
 	 * @param args

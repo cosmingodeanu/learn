@@ -1,6 +1,5 @@
 package innerclass;
-
-class Popcorn {
+ class Popcorn {
 	public void pop() {
 		System.out.println("popcorn");
 	}
