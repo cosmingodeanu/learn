@@ -28,10 +28,7 @@ public class POly {
 		Foo f = new Bar();
 		f.addFive();
 		System.out.println(f.a);
-		StringBuilder sb = new StringBuilder("3");
-		sb.append("3");
-		StringBuffer sb2 = new StringBuffer("3");
-		sb2.append("3");
+		System.out.println("casting to bar"+((Bar)f).a);
 
 	}
 
